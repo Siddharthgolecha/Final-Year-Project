@@ -1,0 +1,25 @@
+Doc to start Polling Application :-
+
+1.) Bring up blockchain network
+
+a.) ./network.sh createChannel -s couchdb -ca
+b.) ./network.sh deployCC -ccn basic -ccp ../smart-contract/diSmartContract -ccl go
+c.) ./network.sh down
+
+2.) Bring up application-side :-
+
+a.) rm -rf wallet/
+b.) node enroll.js
+c.) node app.js
+
+3.) Enable tunneling :-
+
+a.) npx localtunnel --port 3000 --subdomain polling-application-mbm-engineering-college
+
+4.) Blockchain explorer :-
+
+a.) remove wallet -> rm -rf wallet/
+b.) change the key in the connection-profile from network-layer
+c.) clear the database -> sudo -u postgres ./createdb.sh
+d.) npm start
+e.) npm run app-stop
